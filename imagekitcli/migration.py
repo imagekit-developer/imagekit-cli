@@ -126,7 +126,7 @@ def clean_cache():
     open(TOMIGRATE, 'w').close()
     return "Cache cleaned!"
 
-def migrate_data():
+def migrate_data(status):
     if not os.path.exists(TOMIGRATE):
         get_cloudinary_data()
 
@@ -149,7 +149,9 @@ def migrate_data():
     print("Migrated              : {}".format(len(succ_list)))
     print("To migrate            : {}".format(len(url_list)))
     print("-------------------------------------\n")
-
+    
+    if status == True:
+        sys.exit()
 
     with ThreadPoolExecutor(max_workers=WORKERS) as executor:
         results = executor.map(upload_file, url_list)
