@@ -47,7 +47,7 @@ optional arguments:
   -c, --clean           Clean caches
   -s, --status          Check status
 ``` 
-  >**Note:** Use Cloudinary Backkup bucket to migrate if storage is more than 2GB or if you are on Cloudinary paid plan. 
+  >**Note:** Use Cloudinary Backup bucket to migrate if storage is more than 2GB or if you are on Cloudinary paid plan. 
 
   * Enable Cloudinary Backup Bucket [Guide](https://support.cloudinary.com/hc/en-us/articles/360029234052-Enabling-Automatic-File-Backups-in-your-Cloudinary-Account)
   * Contact [Imagekit support](mailto:support@imagekit.io) to add this bucket as Origin in Imagekit dashboard. 
