@@ -38,8 +38,8 @@ CLI Arguments:
 usage: imagekitcli [-h] [-m] [-l] [-u] [-o OUTPUT] [-c] [-s]
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -m, --migrate         migrate Cloudinary storage to ImageKit
+  -h, --help            Show this help message and exit
+  -m, --migrate         Migrate Cloudinary storage to ImageKit
   -l, --list            Cloudinary URL list
   -u, --usage           Cloudinary usage
   -o OUTPUT, --output OUTPUT

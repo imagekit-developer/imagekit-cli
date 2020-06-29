@@ -95,7 +95,7 @@ def get_cloudinary_data():
 
 def get_urls():
     urls = []
-    if not os.path.exists(TOMIGRATE):
+    if not os.path.exists(TOMIGRATE) or os.stat(TOMIGRATE).st_size==0:
         get_cloudinary_data()
     for doc in open(TOMIGRATE, 'r'):
         doc = json.loads(doc)
@@ -127,7 +127,7 @@ def clean_cache():
     return "Cache cleaned!"
 
 def migrate_data(status):
-    if not os.path.exists(TOMIGRATE):
+    if not os.path.exists(TOMIGRATE) or os.stat(TOMIGRATE).st_size==0:
         get_cloudinary_data()
 
     count=0
@@ -183,7 +183,7 @@ def main():
     check_connections()
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m", "--migrate", help="migrate image resources from Cloudinary to ImageKit", action="store_true")
+    parser.add_argument("-m", "--migrate", help="Migrate image resources from Cloudinary to ImageKit", action="store_true")
     parser.add_argument("-l", "--list", help="Cloudinary URL list", action="store_true")
     parser.add_argument("-u", "--usage", help="Cloudinary usage", action="store_true")
     parser.add_argument("-o", "--output", help="Output file path (used with --list)")
