@@ -3,7 +3,7 @@
 
 from setuptools import setup
 
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 
 with open('requirements.txt') as f: 
         requirements = f.readlines() 

@@ -74,9 +74,8 @@ def get_cloudinary_data():
                 doc = json.dumps(doc)
                 f.write(doc + os.linesep)
             except Exception as ex:
-                os. remove(TOMIGRATE)
-                print(ex)
-                sys.exit(1)
+                os.remove(TOMIGRATE)
+                raise ex
             else:
                 count+=1
         res = cloudinary.api.resources(type="upload", resource_type="image", context=True, tags=True, max_results=BATCH_SIZE, next_cursor=res['next_cursor'])
@@ -86,9 +85,8 @@ def get_cloudinary_data():
             doc = json.dumps(doc)
             f.write(doc + os.linesep)
         except Exception as ex:
-            os. remove(TOMIGRATE)
-            print(ex)
-            sys.exit(1)
+            os.remove(TOMIGRATE)
+            raise ex
         else:
             count+=1
     f.close()
